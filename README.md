@@ -1,8 +1,7 @@
-# AWS RDS automation help scripts
+# Backup RDS MySQL and Postgres databases locally
 
-##This repository has some general RDS automation help scripts for use. They can further be used with local setup, cron jobs, Lambda function as per your own requirements.
+##This repository has guidance and scripts to backup RDS locally
 
-1. Create an RDS Aurora clone for staging environments and delete the existing one
-2. Stop all RDS instances and clusters
-3. Start all RDS instances and clusters
-4. Backup all databases from RDS and Aurora Postgres instances using pg_dump
+1. Backup RDS and Aurora Postgres databases locally using pg_dump
+
+2. Backup RDS and Aurora MySQL databases locally using mysqldump
