@@ -1,4 +1,4 @@
-# AWS-RDS-Automations
+# AWS RDS automation help scripts
 
 ##This repository has some general RDS automation help scripts for use. They can further be used with local setup, cron jobs, Lambda function as per your own requirements.
 
