@@ -5,13 +5,13 @@ while read dbs
 do 
     dbList+=("$dbs")
 done < <(psql -h $endpoint -t -d postgres -U $user -c "SELECT datname FROM pg_database WHERE datistemplate = false;")
-#take dump for databases
+#take dump for databases, change port in line 14 is not using default 5432
 for dbName in "${dbList[@]}"
 do
 	if [ "$dbName" != "rdsadmin" ] && [ "$dbName" != "postgres" ] && [ "$dbName" != "" ]; then
-		echo "Database Name: $dbName"
-		echo "Backup file name: dump+$dbName.sql"
+		echo "DB Name: $dbName"
+		echo "Backup name: dump+$dbName.sql"
 		pg_dump -h $endpoint -U $user -p 5432 -f dump+$dbName.sql $dbName
-		echo "Database dump completed for database: $dbName" 
+		echo "Database dumped for database: $dbName" 
 	fi	
 done
